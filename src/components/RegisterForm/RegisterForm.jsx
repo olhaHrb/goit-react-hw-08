@@ -1,14 +1,20 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useId } from "react";
-import css from "../LogInForm/LogInForm.module.css";
+import css from "../RegisterForm/RegisterForm.module.css";
 import * as yup from "yup";
 
 const initialValues = {
+  name: "",
   email: "",
   password: "",
 };
 
 const ContactFormSchema = yup.object().shape({
+  name: yup
+    .string()
+    .min(3, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
   email: yup
     .string()
     .min(3, "Too Short!")
@@ -21,20 +27,36 @@ const ContactFormSchema = yup.object().shape({
     .required("Required"),
 });
 
-const LogInForm = () => {
+const RegisterForm = () => {
+  const nameFieldId = useId;
   const emailFieldId = useId;
   const passwordFieldId = useId;
   const handleSubmit = () => {};
 
   return (
     <div>
-      <h1>Please log in</h1>
+      <h1>Register your account</h1>
       <Formik
         initialValues={initialValues}
         onSubmit={handleSubmit}
         validationSchema={ContactFormSchema}
       >
         <Form className={css.form}>
+          <div className={css.wrap}>
+            <label htmlFor={nameFieldId}>Name</label>
+            <Field
+              className={css.input}
+              type="text"
+              name="name"
+              id={nameFieldId}
+            ></Field>
+            <ErrorMessage
+              className={css.error}
+              name="name"
+              component="span"
+            ></ErrorMessage>
+          </div>
+
           <div className={css.wrap}>
             <label htmlFor={emailFieldId}>Email</label>
             <Field
@@ -66,7 +88,7 @@ const LogInForm = () => {
           </div>
 
           <button className={css.button} type="Submit">
-            Log In
+            Register
           </button>
         </Form>
       </Formik>
@@ -74,4 +96,4 @@ const LogInForm = () => {
   );
 };
 
-export default LogInForm;
+export default RegisterForm;

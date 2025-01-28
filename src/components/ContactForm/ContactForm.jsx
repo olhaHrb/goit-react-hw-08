@@ -47,17 +47,26 @@ const ContactForm = () => {
       validationSchema={ContactFormSchema}
     >
       <Form className={css.form}>
-        <label htmlFor={nameFieldId}>Name</label>
-        <Field className={css.input} type="text" name="name" id={nameFieldId} />
-        <ErrorMessage className={css.error} name="name" component="span" />
-        <label htmlFor={numberFieldId}>Number</label>
-        <Field
-          className={css.input}
-          type="text"
-          name="number"
-          id={numberFieldId}
-        />
-        <ErrorMessage className={css.error} name="number" component="span" />
+        <div className={css.wrap}>
+          <label htmlFor={nameFieldId}>Name</label>
+          <Field
+            className={css.input}
+            type="text"
+            name="name"
+            id={nameFieldId}
+          />
+          <ErrorMessage className={css.error} name="name" component="span" />
+        </div>
+        <div className={css.wrap}>
+          <label htmlFor={numberFieldId}>Number</label>
+          <Field
+            className={css.input}
+            type="text"
+            name="number"
+            id={numberFieldId}
+          />
+          <ErrorMessage className={css.error} name="number" component="span" />
+        </div>
         <button className={css.button} type="Submit">
           Add contact
         </button>
