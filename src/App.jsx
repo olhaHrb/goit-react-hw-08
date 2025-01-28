@@ -8,6 +8,8 @@ import { fetchContacts } from "./redux/contactsOps";
 import Loader from "./components/Loader/Loader";
 import Error from "./components/Error/Error";
 import { selectError, selectLoading } from "./redux/contactsSlice";
+import Header from "./components/Header/Header";
+import LogInForm from "./components/LogInForm/LogInForm";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -19,6 +21,8 @@ export default function App() {
 
   return (
     <div className={css.container}>
+      <Header />
+      <LogInForm />
       <h1>Phonebook</h1>
 
       <ContactForm />
