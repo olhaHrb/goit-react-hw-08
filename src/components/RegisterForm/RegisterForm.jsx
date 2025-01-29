@@ -35,7 +35,6 @@ const RegisterForm = () => {
 
   return (
     <div>
-      <h1>Register your account</h1>
       <Formik
         initialValues={initialValues}
         onSubmit={handleSubmit}
