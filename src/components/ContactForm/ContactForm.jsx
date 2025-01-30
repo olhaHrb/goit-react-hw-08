@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
 import * as yup from "yup";
-import { addContact } from "../../redux/contacts/contactsOps";
+import { addContact } from "../../redux/contacts/operations";
 import { nanoid } from "@reduxjs/toolkit";
 
 const initialValues = {

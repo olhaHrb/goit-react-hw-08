@@ -5,5 +5,6 @@ h1 {
 }
 
 .container {
-  width: 504px;
+  width: 100%;
+  box-sizing: border-box;
 }

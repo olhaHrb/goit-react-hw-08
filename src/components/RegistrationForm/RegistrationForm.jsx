@@ -1,6 +1,6 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useId } from "react";
-import css from "../RegisterForm/RegisterForm.module.css";
+import css from "./RegistrationForm.module.css";
 import * as yup from "yup";
 
 const initialValues = {

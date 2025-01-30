@@ -1,13 +1,6 @@
-.container {
-  background-color: rgb(179, 191, 191);
-  width: 504px;
-  padding: 12px 24px;
-}
-
 .nav {
   display: flex;
-  gap: 16px;
-  font-size: 24px;
+  gap: 8px;
 }
 
 .link {

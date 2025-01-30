@@ -1,8 +1,8 @@
 .container {
-  width: 480px;
-  height: 480px;
-  background-color: rgb(124, 173, 178);
+  width: 100%;
+  height: 100%;
   padding: 80px 36px;
+  box-sizing: border-box;
 }
 
 .h1 {

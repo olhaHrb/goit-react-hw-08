@@ -8,11 +8,9 @@ const authSlice = createSlice({
       email: null,
     },
     token: null,
-    isLoggedIn: false,
+    isLoggedIn: true,
+    isRefreshing: false,
   },
 });
-
-export const selectUser = (state) => state.auth.user;
-export const selectIsLoggedIn = (state) => state.auth.isLoggedIn;
 
 export const authReducer = authSlice.reducer;
