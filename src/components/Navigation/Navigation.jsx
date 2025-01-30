@@ -4,7 +4,7 @@ import css from "./Navigation.module.css";
 
 const Navigation = () => {
   return (
-    <header>
+    <header className={css.container}>
       <nav className={css.nav}>
         <NavLink
           to="/"
@@ -13,6 +13,14 @@ const Navigation = () => {
           }}
         >
           Home
+        </NavLink>
+        <NavLink
+          to="/contacts"
+          className={({ isActive }) => {
+            return clsx(css.link, isActive && css.active);
+          }}
+        >
+          Contacts
         </NavLink>
         <NavLink
           to="/login"
