@@ -2,6 +2,8 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useId } from "react";
 import css from "./RegistrationForm.module.css";
 import * as yup from "yup";
+import { useDispatch } from "react-redux";
+import { register } from "../../redux/auth/operations";
 
 const initialValues = {
   name: "",
@@ -17,21 +19,26 @@ const ContactFormSchema = yup.object().shape({
     .required("Required"),
   email: yup
     .string()
-    .min(3, "Too Short!")
+    .min(7, "Too Short!")
     .max(50, "Too Long!")
     .required("Required"),
   password: yup
     .string()
-    .min(3, "Too Short!")
+    .min(7, "Too Short!")
     .max(50, "Too Long!")
     .required("Required"),
 });
 
 const RegisterForm = () => {
+  const dispatch = useDispatch();
+
+  const handleSubmit = (values, actions) => {
+    dispatch(register(values));
+    actions.resetForm();
+  };
   const nameFieldId = useId;
   const emailFieldId = useId;
   const passwordFieldId = useId;
-  const handleSubmit = () => {};
 
   return (
     <div>
