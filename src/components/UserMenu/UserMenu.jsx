@@ -8,7 +8,7 @@ const UserMenu = () => {
   const user = useSelector(selectUser);
   return (
     <div className={css.container}>
-      <p className={css.p}>Welcome, {user.name}</p>
+      <p>Welcome, {user.name}</p>
       <button className={css.button} onClick={() => dispatch(logout())}>
         Log out
       </button>

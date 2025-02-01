@@ -20,7 +20,7 @@ const ContactsPage = () => {
   }, [dispatch]);
   return (
     <div>
-      <h1>Phonebook</h1>
+      <h1 className={css.title}>Phonebook</h1>
       <div className={css.container}>
         <ContactForm />
         <SearchBox />

@@ -2,5 +2,10 @@
   width: 480px;
   padding: 36px;
   margin: 0;
-  font-family: Roboto;
+}
+
+.title {
+  margin-top: 24px;
+  margin-left: 36px;
+  font-size: 24px;
 }

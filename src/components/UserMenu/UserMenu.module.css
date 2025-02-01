@@ -1,14 +1,10 @@
 .container {
   display: flex;
-  gap: 8px;
+  gap: 12px;
   align-items: center;
 }
 
 .button {
   display: block;
-  margin: 0;
-}
-
-.p {
   margin: 0;
 }
